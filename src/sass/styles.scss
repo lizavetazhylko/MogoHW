@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@700&family=Raleway&display=swap');
+@import url("../../font-awesome-4.7.0/css/font-awesome.min.css");
+
+@mixin display__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin display__space-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin line {
+    width: 170px;
+    border: 3px solid;
+    background: #fff;
+}
+
+@mixin width__container {
+    width: 1510px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin square {
+    width: 370px;
+    height: 338px;
+}
+
+$font-raleway: 'Raleway', 'sans-serif';
+$font-kaushan: 'Kaushan Script', 'sans-serif';
+$font-montserrat: 'Montserrat', 'sans-serif';
+$main-color: #2D3033;
+
+    
+
+.mogo {
+    width: 100%;
+    height: 1024px;
+    background: linear-gradient(360deg, rgba(237, 215, 137, 0.9) 0%, rgba(233, 130, 131, 0.9) 100%), url(../../img/mogo__background.png);
+    @include display__center;
+    color: #fff;
+
+        &__width-container {
+            @include width__container;
+        }
+        
+        &__header {
+            width: 100%;
+            height: 100px;
+            @include display__space-between;
+            margin-bottom: 75px;
+
+                &-links {
+                    width: 60%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-family: $font-raleway;
+                    font-size: 14px;
+                    color: #fff;
+                }
+        }
+
+        &__banner {
+            @include display__center;
+            flex-direction: column;
+
+                &-subtitle {
+                    font-family: $font-kaushan;
+                    font-size: 64px;
+                    margin: 0px 0px 30px 0px;
+                }
+
+                &-title-wrapper {
+                    text-align: center;
+                }
+
+                &-title {
+                    font-family: $font-montserrat;
+                    font-size: 144px;
+                    margin-top: 0px;
+                    margin-bottom: 43px;
+                    text-transform: uppercase;
+                }
+
+                &-line {
+                    width: 170px;
+                    @include line;
+                    margin-bottom: 75px;
+                }
+        }
+
+        &__button {
+            width: 370px;
+            height: 78px;
+            background: none;
+            border: 4px solid #fff;
+            color: #fff;
+            font-family: $font-raleway;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 100px;
+        }
+
+        &__slider {
+            width: 100%;
+
+                &-lines {
+                    width: 100%;
+                    @include display__space-between;
+                    margin-bottom: 30px;
+                }
+
+                &-line {
+                    @include line;
+                    width: 270px;
+                }
+
+                &-numbers {
+                    width: 100%;
+                    @include display__space-between;
+                    text-align: left;
+                }
+
+                &-number {
+                    font-family: $font-raleway;
+                    font-size: 18px;
+                }
+        }
+    
+}
+
+.about {
+    width: 100%;
+    padding: 50px 0px 108px;
+    @include display__center;
+
+        &__width-container {
+            @include width__container;
+        }
+
+        &__text {
+            @include display__center;
+            flex-direction: column;
+            text-align: center;
+            color: $main-color;
+
+                &-subtitle {
+                    font-family: $font-kaushan;
+                    font-size: 30px;
+                    margin: 0px 0px 50px;
+                }
+
+                &-title {
+                    font-family: $font-raleway;
+                    font-size: 36px;
+                    text-transform: uppercase;
+                    font-weight: 900;
+                    margin: 0px;
+                    margin-bottom: 50px;
+                }
+
+                &-line {
+                    @include line;
+                    color: #F38281;
+                    background-color: #F38281;
+                    margin-bottom: 50px;
+                }
+
+                &-desc {
+                    font-family: $font-raleway;
+                    font-size: 18px;
+                    margin-bottom: 100px;
+                }
+        }
+
+        &__team {
+            width: 100%;
+            @include display__space-between;
+
+            &-square1 {
+                @include square;
+                background: #95E1D3;
+                overflow: hidden;
+            }
+
+            &-square2 {
+                @include square;
+                background: url(../../img/square2.png);
+                overflow: hidden;
+            }
+
+            &-square3 {
+                @include square;
+                background: url(../../img/square3.png);
+                overflow: hidden;
+            }
+/*
+            &-square1::before, &-square2::before, &-square3::before {
+                content: 'Super team';
+                font-family: $font-raleway;
+                @include square;
+                transform: translateY(-20px) translateX(-20px);
+                background: linear-gradient(360deg, rgba(237, 215, 137, 0.9) 0%, rgba(233, 130, 131, 0.9) 100%);
+            }*/
+
+            &-square1:hover, &-square2:hover, &-square3:hover {
+                font-family: $font-raleway;
+                @include square;
+                transform: translateY(-20px) translateX(-20px);
+                background: linear-gradient(360deg, rgba(237, 215, 137, 0.9) 0%, rgba(233, 130, 131, 0.9) 100%);
+            }
+        }
+}
+
+.numbers {
+    width: 100%;
+    height: 250px;
+    @include display__center;
+    background: #95E1D3;
+    color: #fff;
+
+    &__width-container {
+        width: 1510px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 170px repeat(5, 234px) 170px;
+    }
+
+    &__block2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: $font-raleway;
+        border-right: 1px solid #fff;
+        border-left: 1px solid #fff;
+
+        &-title {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        &-subtitle {
+            font-size: 24px;
+            font-weight: 700;
+        }
+    }
+}
+
+.amazing {
+    width: 100%;
+    @include display__center;
+    padding: 50px 0px 91px;
+
+    &__width-container {
+        @include width__container;
+    }
+
+    &__text {
+        @include display__center;
+        flex-direction: column;
+        text-align: center;
+        color: $main-color;
+
+            &-subtitle {
+                font-family: $font-kaushan;
+                font-size: 30px;
+                margin: 0px 0px 50px;
+            }
+
+            &-title {
+                font-family: $font-raleway;
+                font-size: 36px;
+                text-transform: uppercase;
+                font-weight: 900;
+                margin: 0px;
+                margin-bottom: 50px;
+            }
+
+            &-line {
+                @include line;
+                color: #F38281;
+                background-color: #F38281;
+                margin-bottom: 50px;
+            }
+        }
+    
+    &__services {
+        display: grid;
+        grid-template-columns: repeat(3, 370px);
+        grid-column-gap: 38px;
+        grid-row-gap: 148px;
+
+            &-block {
+                display: flex;
+                font-family: $font-raleway;
+
+                &-icon {
+                    width: 70px;
+                    height: 70px; 
+                    margin-right: 30px;
+                }
+
+                &-text {
+                    display: flex;
+                    flex-direction: column;
+
+                    &-title {
+                        font-size: 24px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        margin: 20px 0px 20px;
+                    }
+
+                    &-subtitle {
+                        font-size: 18px;
+                        font-weight: 400;
+                    }
+                }
+            }
+    }
+}
